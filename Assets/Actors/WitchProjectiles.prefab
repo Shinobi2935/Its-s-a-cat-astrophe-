@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!95 &3245105286002652732
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223493597164029273}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 399a7cd624a9108468fda0d555d5711c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &1654187336048261146
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 436394445315145027, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_Name
+      value: WitchProjectiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 436394445315145052, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436394445315145052, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436394445315145052, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436394445315145052, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436394445315145052, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 436394445315145052, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436394445315145052, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436394445315145052, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436394445315145052, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436394445315145052, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436394445315145052, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 91065429abc137d4bbc23468e024600d, type: 3}
+--- !u!1 &1223493597164029273 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 436394445315145027, guid: 91065429abc137d4bbc23468e024600d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1654187336048261146}
+  m_PrefabAsset: {fileID: 0}

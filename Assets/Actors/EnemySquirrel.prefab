@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &7728778859789447438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4310434179811788130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13d040e211fc70a4e96ca8832a07ffc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position_1: {fileID: 0}
+  position_2: {fileID: 0}
+  position_3: {fileID: 0}
+  position_4: {fileID: 0}
+  moveSpeed: 2
+--- !u!95 &3771349645262564626
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4310434179811788130}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 771aa2cdea494b54bb093166fa3e6783, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &4458527772776871969
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 436394445315145027, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_Name
+      value: EnemySquirrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 436394445315145052, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436394445315145052, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436394445315145052, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436394445315145052, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436394445315145052, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 436394445315145052, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436394445315145052, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436394445315145052, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436394445315145052, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436394445315145052, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436394445315145052, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436394445803422209, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 436394445803422209, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 436394445803422209, guid: 91065429abc137d4bbc23468e024600d,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 436394445315145048, guid: 91065429abc137d4bbc23468e024600d, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 91065429abc137d4bbc23468e024600d, type: 3}
+--- !u!1 &4310434179811788130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 436394445315145027, guid: 91065429abc137d4bbc23468e024600d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4458527772776871969}
+  m_PrefabAsset: {fileID: 0}
