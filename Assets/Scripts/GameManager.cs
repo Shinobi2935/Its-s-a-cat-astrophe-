@@ -51,7 +51,8 @@ public class GameManager : MonoBehaviour
     {
         gameHasEnded = false;
         Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(1);
     }
 
     public void MainMenu()
