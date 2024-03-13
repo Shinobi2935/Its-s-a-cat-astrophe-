@@ -102,6 +102,16 @@ public class PlayerStats : CharacterStats
         
         yield return new WaitForSeconds(2);
         FindObjectOfType<GameManager>().EndGame();
+        maxHealth = 100;
+        currentHealth = 100;
+        maxTimeSprint = 100.0f;
+
+        damage.baseValue = 10;
+        damage.modifiers = null;
+        armor.baseValue = 0;
+        armor.modifiers = null;
+
+        SaveSystem.SavePlayer(this);
         Destroy(gameObject);
     }
 
