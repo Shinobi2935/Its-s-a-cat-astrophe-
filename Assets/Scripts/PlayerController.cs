@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
     }
     public bool GetIsInteracting() { return isInteracting; }
     public void SetIsInteracting(bool inter) { isInteracting = inter; }
-    public bool GetIsInventoryShown() { return isInventoryShown; }
+    //public bool GetIsInventoryShown() { return isInventoryShown; }
     private void OnMovePerformed(InputAction.CallbackContext context)
     {
         moveVector = context.ReadValue<Vector2>();
@@ -121,11 +121,16 @@ public class PlayerController : MonoBehaviour
     private void OnInventoryShowPerformed(InputAction.CallbackContext context)
     {
         //isInventoryShown = (isInventoryShown) ? false : true;
+
+        FindObjectOfType<MenuScript>().ShowInventory();
         if (!isInventoryShown)
         {
-            FindObjectOfType<MenuScript>().ShowInventory();
+            isInventoryShown = true;
         }
-        isInventoryShown = !isInventoryShown;
+        else
+        {
+            isInventoryShown = false;
+        }
     }
     private void OnMoveCanceled(InputAction.CallbackContext context)
     {

@@ -3315,7 +3315,7 @@ PrefabInstance:
         type: 3}
       propertyPath: gamemanager
       value: 
-      objectReference: {fileID: 1854474822}
+      objectReference: {fileID: 0}
     - target: {fileID: 8205270236692386030, guid: 93a9b289f4c8e4182b877deddeccb78a,
         type: 3}
       propertyPath: m_RootOrder
