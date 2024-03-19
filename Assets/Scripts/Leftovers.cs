@@ -19,7 +19,7 @@ public class Leftovers : Enemy
     IEnumerator Explote()
     {
         yield return new WaitForSeconds(exploteTime);
-        enemyAnimator.SetTrigger("Explote");
+        enemyAnimator.SetTrigger("muerte");
         StartCoroutine(stats.Die());
     }
 }
