@@ -122,4 +122,11 @@ public class InventoryManager : MonoBehaviour
     {
         return Items;
     }
+
+    public void RemoveAll()
+    {
+        Items = Items = new List<CollectableItem>();
+        globalItemCounter = 0;
+        itemCounterText.text = globalItemCounter.ToString() + "/20";
+    }
 }

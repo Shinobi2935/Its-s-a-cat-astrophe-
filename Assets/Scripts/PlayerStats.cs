@@ -110,6 +110,7 @@ public class PlayerStats : CharacterStats
         damage.modifiers = null;
         armor.baseValue = 0;
         armor.modifiers = null;
+        InventoryManager.Instance.RemoveAll();
 
         SaveSystem.SavePlayer(this);
         Destroy(gameObject);
