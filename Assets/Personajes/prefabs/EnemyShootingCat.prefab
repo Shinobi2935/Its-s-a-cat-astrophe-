@@ -197,7 +197,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   knockBackForce:
-    baseValue: 5000
+    baseValue: 2000
     modifiers: 
   characterAudio: {fileID: 1697242676515723377}
 --- !u!95 &4761505268615803341

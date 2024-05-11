@@ -200,7 +200,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 1
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -248,7 +248,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   knockBackForce:
-    baseValue: 3000
+    baseValue: 1000
     modifiers: 
   characterAudio: {fileID: 0}
 --- !u!95 &2902288154863592623
