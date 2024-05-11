@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
 {
@@ -13,12 +15,18 @@ public class Spawner : MonoBehaviour
     [SerializeField] private int totalEnemiesS1 = 30;
     [SerializeField] private int totalEnemiesS2 = 40;
 
+    [SerializeField] private int currentSpawn = 0;
+    [SerializeField] private TextMeshProUGUI textCounter;
+    [SerializeField] private Image textBackground;
+
     private GameObject[] enemies;
     private bool waveFinished = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        textCounter.text = currentSpawn.ToString() + " / " + (SpawnRange + 1).ToString();
+        textBackground.color = Color.gray;
         StartCoroutine(SpawnFirstStage());
     }
 
@@ -27,7 +35,7 @@ public class Spawner : MonoBehaviour
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         //Debug.Log(enemies.Length);
-        if(witch != null) { witch.SetActive((totalEnemiesS2 == 0) && (enemies.Length == 0)); }
+        if(witch != null) { witch.SetActive((totalEnemiesS2 == 0) && (enemies.Length == 0)); if(witch.activeSelf){ currentSpawn = 3; textBackground.color = Color.red; textCounter.text = currentSpawn.ToString() + " / " + (SpawnRange + 1).ToString(); } }
     }
 
     IEnumerator SpawnFirstStage()
@@ -45,8 +53,8 @@ public class Spawner : MonoBehaviour
             totalEnemiesS1--;
             if(totalEnemiesS1 == 0) { break; }
         }
-        if(totalEnemiesS1 > 0) { StartCoroutine(SpawnFirstStage()); }
-        else { StartCoroutine(SpawnSecondStage()); }
+        if(totalEnemiesS1 > 0) { currentSpawn = 1; textBackground.color = Color.green; textCounter.text = currentSpawn.ToString() + " / " + (SpawnRange + 1).ToString(); StartCoroutine(SpawnFirstStage()); }
+        else { currentSpawn = 2; textBackground.color = Color.yellow; textCounter.text = currentSpawn.ToString() + " / " + (SpawnRange + 1).ToString(); StartCoroutine(SpawnSecondStage()); }
     }
     IEnumerator SpawnSecondStage()
     {
