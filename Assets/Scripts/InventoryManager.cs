@@ -122,4 +122,9 @@ public class InventoryManager : MonoBehaviour
     {
         return Items;
     }
+
+    public void ErraseInventory()
+    {
+        Items = new List<CollectableItem>();
+    }
 }

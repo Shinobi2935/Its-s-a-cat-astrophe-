@@ -29,8 +29,7 @@ public class PlayerStats : CharacterStats
             maxTimeSprint = data.maxStamina;
 
             damage.baseValue = data.DamageValue;
-            Debug.Log(data.DamageModdifier.Length);
-            if (data.DamageModdifier.Length > 0)
+            if (data.DamageModdifier != null)
             {
                 for (int i = 0; i < data.DamageModdifier.Length; i++)
                 {
@@ -39,7 +38,7 @@ public class PlayerStats : CharacterStats
             }
 
             armor.baseValue = data.ArmorValue;
-            if (data.ArmorModdifier.Length > 0)
+            if (data.ArmorModdifier != null)
             {
                 for (int i = 0; i < data.ArmorModdifier.Length; i++)
                 {
@@ -107,11 +106,12 @@ public class PlayerStats : CharacterStats
         maxTimeSprint = 100.0f;
 
         damage.baseValue = 10;
-        damage.modifiers = null;
+        damage.modifiers = new List<int>();
         armor.baseValue = 0;
-        armor.modifiers = null;
+        armor.modifiers = new List<int>();
 
         SaveSystem.SavePlayer(this);
+        yield return new WaitForSeconds(2);
         Destroy(gameObject);
     }
 
