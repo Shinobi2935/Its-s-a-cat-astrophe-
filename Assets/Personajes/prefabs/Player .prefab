@@ -607,6 +607,7 @@ MonoBehaviour:
     baseValue: 350
     modifiers: 
   characterAudio: {fileID: 0}
+  playerInput: {fileID: 8205270236692386032}
   moveSpeed: 3
   maxSprint: 15
   maxTimeSprint: 100
