@@ -98,9 +98,12 @@ public class PlayerController : MonoBehaviour
     }
     private void OnRunPerformed(InputAction.CallbackContext context)
     {
-        isRunning = true;
-        playerAudio.clip = runAudio;
-        playerAudio.Play();
+        if (!isRunning && !isRecovering)
+        {
+            isRunning = true;
+            playerAudio.clip = runAudio;
+            playerAudio.Play();
+        }
     }
     private void OnFireStarted(InputAction.CallbackContext context)
     {
