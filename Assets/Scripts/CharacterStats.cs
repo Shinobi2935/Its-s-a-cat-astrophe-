@@ -8,6 +8,7 @@ public class CharacterStats : MonoBehaviour
 	public static CharacterStats Instance;
     [SerializeField] public AudioClip damageAudio;
     [SerializeField] public AudioClip deathAudio;
+    [SerializeField] private Collider2D m_Collider;
 	public int maxHealth = 100;
     public int currentHealth;
 
@@ -58,6 +59,7 @@ public class CharacterStats : MonoBehaviour
 
 		if (currentHealth <= 0)
         {
+            if(m_Collider != null) m_Collider.enabled = false;
             StartCoroutine(Die());
         }
 	}
