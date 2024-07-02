@@ -189,6 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAudio: {fileID: 8300000, guid: dbe2e71798f2eb6409348a6008015beb, type: 3}
   deathAudio: {fileID: 8300000, guid: 28f6f9a6fa149984986a828e00c5b3b3, type: 3}
+  m_Collider: {fileID: 8356892157837487586}
   maxHealth: 15
   currentHealth: 0
   damage:
@@ -218,7 +219,6 @@ MonoBehaviour:
   position_3: {fileID: 8315709934325314870}
   position_4: {fileID: 4903933057043350672}
   moveSpeed: 5
-  moveSpeed: 4
   ildeTime: 4
 --- !u!95 &4036657779734173099
 Animator:
@@ -253,9 +253,6 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 2.8
-  m_AngularDrag: 0
-  m_Mass: 3
-  m_LinearDrag: 1
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}

@@ -165,7 +165,7 @@ MonoBehaviour:
   position_4: {fileID: 0}
   moveSpeed: 2
   ildeTime: 4
-  bulletPrefab: {fileID: 4187286885594795086, guid: 1d65ae35deeafec4f95c4cb458e818f0,
+  bulletPrefab: {fileID: 6961625129337975263, guid: ee5ddf210f8220a47ba52ac6a0c3b0ba,
     type: 3}
   rotationSpeed: 2
   distanceToShoot: 3.5
@@ -188,6 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAudio: {fileID: 8300000, guid: dbe2e71798f2eb6409348a6008015beb, type: 3}
   deathAudio: {fileID: 8300000, guid: 28f6f9a6fa149984986a828e00c5b3b3, type: 3}
+  m_Collider: {fileID: 1485722134380107832}
   maxHealth: 50
   currentHealth: 0
   damage:
