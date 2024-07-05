@@ -5,17 +5,19 @@ using TMPro;
 
 public class Letrero : MonoBehaviour
 {
-	public GameObject dialogBox;
-	public TMP_Text dialogText;
-	public string dialogo;
-	private bool dialogActive;
-	public PlayerController playerController = null;
-	public bool leido = false;
+	[SerializeField] private GameObject dialogBox;
+	[SerializeField] private TMP_Text dialogText;
+	[SerializeField] private string dialogo;
+	[SerializeField] private PlayerController playerController = null;
+	[SerializeField] public bool leido = false;
+	[SerializeField] private SpriteRenderer vSprite;
+	private bool dialogActive = false;
 	private AudioSource readAudio;
 
     private void Start()
     {
 		readAudio = this.GetComponent<AudioSource>();
+		vSprite.enabled = false;
     }
     void Update()
 	{
@@ -24,6 +26,7 @@ public class Letrero : MonoBehaviour
 			if (dialogActive) { dialogBox.SetActive(playerController.GetIsInteracting()); 
 			if (playerController.GetIsInteracting()) { Debug.Log("Leeyo el texto"); leido = true; } }
 			if (!dialogBox.active) { readAudio.Play(); }
+			vSprite.enabled = dialogActive;
 		}
 	}
 
