@@ -12,8 +12,8 @@ public class PlayerStats : CharacterStats
     public float currentTimeSprint {get; private set;}
     private static bool gameStarted = false;
     private MenuScript menuScript;
-    private int maxUpdatedHealth = 1000;
-    private int maxUpdatedStamina = 1000;
+    private int maxUpdatedHealth = 500;
+    private int maxUpdatedStamina = 500;
     private Animator playerAnimator;
     //private Animator sidekickAnimator;
 
