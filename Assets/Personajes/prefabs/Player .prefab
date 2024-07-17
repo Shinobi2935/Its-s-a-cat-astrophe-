@@ -282,8 +282,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2309215, y: -0.31973767}
-  m_Size: {x: 0.7960534, y: 1.118422}
+  m_Offset: {x: 0.2309215, y: -0.55}
+  m_Size: {x: 0.7, y: 0.7}
   m_Direction: 0
 --- !u!82 &551465942
 AudioSource:
@@ -487,7 +487,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8205270236692386037}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.06376, y: -4.5321474, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6275665092235685152}
@@ -537,7 +537,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 4
   m_Sprite: {fileID: 4858710646778231126, guid: a944c851219864d44aae9fcb96928e9f,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -607,7 +607,7 @@ MonoBehaviour:
   knockBackForce:
     baseValue: 350
     modifiers: 
-  characterAudio: {fileID: 0}
+  characterAudio: {fileID: 2710336335442159035}
   moveSpeed: 3
   maxSprint: 15
   maxTimeSprint: 100

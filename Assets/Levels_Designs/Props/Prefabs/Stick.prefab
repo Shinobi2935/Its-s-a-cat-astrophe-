@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5397520889221442243}
   - component: {fileID: 8081637838616216753}
   - component: {fileID: 6857104692138486323}
+  - component: {fileID: 3482757111769295014}
   m_Layer: 0
   m_Name: Stick
   m_TagString: CollectableItems
@@ -73,8 +74,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: 7a0b011bfbf83c744bfe554b4f9aa0e9, type: 3}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: -7907951331658488048, guid: 7a0b011bfbf83c744bfe554b4f9aa0e9,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -158,3 +160,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Item: {fileID: 11400000, guid: 74ee14061272d3a468c51fae9fce5ab8, type: 2}
+--- !u!95 &3482757111769295014
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824836861446260630}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 42ab061e718e15c42a851f92b971be02, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
