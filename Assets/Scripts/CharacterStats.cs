@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 public class CharacterStats : MonoBehaviour
@@ -9,6 +10,8 @@ public class CharacterStats : MonoBehaviour
     [SerializeField] public AudioClip damageAudio;
     [SerializeField] public AudioClip deathAudio;
     [SerializeField] private Collider2D m_Collider;
+    [SerializeField] private Slider health;
+    [SerializeField] private GameObject canvas;
 	public int maxHealth = 100;
     public int currentHealth;
 
@@ -30,6 +33,7 @@ public class CharacterStats : MonoBehaviour
     public virtual void Start ()
 	{
 		Instance = this;
+        if(health != null) health.value = 1;
     }
     //private void Update()
     //{
@@ -43,6 +47,7 @@ public class CharacterStats : MonoBehaviour
     // Damage the character
     public virtual void TakeDamage (int damage)
 	{
+        if(canvas != null) canvas.SetActive(true);
 		// Subtract the armor value - Make sure damage doesn't go below 0.
 
 		damage -= armor.GetValue();
@@ -50,8 +55,8 @@ public class CharacterStats : MonoBehaviour
 
 		// Subtract damage from health
 		currentHealth -= damage;
-		Debug.Log(transform.name + " takes " + damage + " damage.");
-        Debug.Log(damageAudio);
+        Debug.Log("health per: " + currentHealth);
+        if(health != null) health.value = (float)currentHealth/maxHealth;
         characterAudio.clip = damageAudio;
         characterAudio.Play();
         

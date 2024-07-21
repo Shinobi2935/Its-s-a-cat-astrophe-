@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterStats))]
 public class EnemyMouse : Enemy
 {
     [SerializeField] private Transform position_1;
