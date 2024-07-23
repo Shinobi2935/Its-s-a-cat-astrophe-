@@ -2,19 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterStats))]
-
 public class SpiderWeeb : MonoBehaviour
 {
-    protected CharacterStats stats;
     [SerializeField] private int reduccion;
     private float maxS;
     private float moveS;
-
-    public virtual void Start ()
-	{
-		stats = GetComponent<CharacterStats>();
-	}
 
     // Update is called once per frame
     public virtual void OnTriggerEnter2D(Collider2D col)
