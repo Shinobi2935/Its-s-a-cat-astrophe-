@@ -10,14 +10,19 @@ public class GreenPuddle : MonoBehaviour
 
     public virtual void OnTriggerEnter2D(Collider2D col)
     {
-        normal.x = ran.Next(0,10);
-        normal.y = ran.Next(0,10);
-        normal = normal.normalized * multiplicador;
-
         if (col.CompareTag("Player"))
         {
-            Rigidbody2D col_Rigidbody = col.transform.parent.GetComponent<Rigidbody2D>();
-            col_Rigidbody.AddForce(normal);
+            StartCoroutine(Slip(col));
         }
+    }
+
+    protected virtual IEnumerator Slip(Collider2D player)
+    {
+        normal.x = ran.Next(-10,10);
+        normal.y = ran.Next(-10,10);
+        normal = normal.normalized * multiplicador;
+        Rigidbody2D col_Rigidbody = player.transform.parent.GetComponent<Rigidbody2D>();
+        yield return new WaitForSeconds(0.1f);
+        col_Rigidbody.AddForce(normal);
     }
 }
