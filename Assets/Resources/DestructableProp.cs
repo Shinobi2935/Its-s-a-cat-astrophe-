@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class DestructableProp : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject item;
 
-    // Update is called once per frame
-    void Update()
+    private static System.Random ran = new System.Random();
+    private int result;
+
+    public void SpawnItem()
     {
-        
+        result = ran.Next(0,5);
+        if (result > 2) Instantiate(item, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
     }
 }
