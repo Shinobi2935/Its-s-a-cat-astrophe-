@@ -2,18 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterStats))]
-
 public class SpiderWeeb : MonoBehaviour
 {
-    protected CharacterStats stats;
+    [SerializeField] private int reduccion;
     private float maxS;
     private float moveS;
-
-    public virtual void Start ()
-	{
-		stats = GetComponent<CharacterStats>();
-	}
 
     // Update is called once per frame
     public virtual void OnTriggerEnter2D(Collider2D col)
@@ -24,9 +17,9 @@ public class SpiderWeeb : MonoBehaviour
             maxS = ps.maxSprint;
             moveS = ps.moveSpeed;
 
-
+            ps.maxSprint /= reduccion;
+            ps.moveSpeed /= reduccion;
         }
-        
     }
 
     public virtual void OnTriggerExit2D(Collider2D col)
@@ -35,8 +28,7 @@ public class SpiderWeeb : MonoBehaviour
         {
             PlayerStats ps = col.transform.parent.GetComponent<PlayerStats>();
             ps.maxSprint = maxS;
-            moveS = ps.moveSpeed;
+            ps.moveSpeed = moveS;
         }
-        
     }
 }
