@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8791457979431291358
 Transform:
   m_ObjectHideFlags: 0
@@ -596,6 +596,8 @@ MonoBehaviour:
   damageAudio: {fileID: 8300000, guid: 0f289dea967beec42834e095a60e3a4e, type: 3}
   deathAudio: {fileID: 8300000, guid: d5375d08fd470984bb8a09380136bbd9, type: 3}
   m_Collider: {fileID: 2570001149118546296}
+  health: {fileID: 0}
+  canvas: {fileID: 0}
   maxHealth: 100
   currentHealth: 0
   damage:
