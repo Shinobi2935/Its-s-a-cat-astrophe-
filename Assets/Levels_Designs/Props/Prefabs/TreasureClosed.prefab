@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 8415224772562933240}
   - component: {fileID: 8996550337708773822}
   m_Layer: 0
-  m_Name: polvo_vfx (5)
+  m_Name: birllo_vfx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
