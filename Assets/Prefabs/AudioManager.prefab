@@ -46,61 +46,61 @@ MonoBehaviour:
   sounds:
   - name: GameOverMusic
     clip: {fileID: 8300000, guid: ae2d69e1f1b79f54f86bd6d1180401e0, type: 3}
-    volume: 0.515
+    volume: 0.2
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Lvl01WorldBuilding
-    clip: {fileID: 8300000, guid: dc4402cf354da88458914d952c902b62, type: 3}
-    volume: 0.419
+    clip: {fileID: 8300000, guid: 132cdd33e8142634985830e43d19b49a, type: 3}
+    volume: 0.2
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: MainMenu
     clip: {fileID: 8300000, guid: 55ecbb2604fe1414d8abea5f2021edf0, type: 3}
-    volume: 0.587
+    volume: 0.2
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: WinMusic
     clip: {fileID: 8300000, guid: cd53d786e4fa8e941bbff6ae486b5595, type: 3}
-    volume: 0.505
+    volume: 0.3
     pitch: 1.58
     loop: 1
     source: {fileID: 0}
   - name: EscenaDePruebas
-    clip: {fileID: 8300000, guid: dc4402cf354da88458914d952c902b62, type: 3}
-    volume: 0.505
+    clip: {fileID: 8300000, guid: 132cdd33e8142634985830e43d19b49a, type: 3}
+    volume: 0.2
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Lvl02WorldBuilding
     clip: {fileID: 8300000, guid: c5ac991cd7b2e7742bb88413ad8981cb, type: 3}
-    volume: 0.505
+    volume: 0.2
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Lvl03WorldBuilding
     clip: {fileID: 8300000, guid: c5ac991cd7b2e7742bb88413ad8981cb, type: 3}
-    volume: 0.505
+    volume: 0.3
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Lvl04WorldBuilding
     clip: {fileID: 8300000, guid: 3f9c008e8c194f84ab05934080e02ea2, type: 3}
-    volume: 0.383
+    volume: 0.2
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Final
     clip: {fileID: 8300000, guid: cd53d786e4fa8e941bbff6ae486b5595, type: 3}
-    volume: 0.505
+    volume: 0.3
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Intro
     clip: {fileID: 8300000, guid: cd53d786e4fa8e941bbff6ae486b5595, type: 3}
-    volume: 0.505
+    volume: 0.3
     pitch: 1
     loop: 1
     source: {fileID: 0}
