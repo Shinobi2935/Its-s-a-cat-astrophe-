@@ -572,7 +572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackAudio: {fileID: 8300000, guid: b9adf8e499f82564da8b8b719b4a4cc9, type: 3}
-  pauseAudio: {fileID: 8300000, guid: ab9bdb875e5a0cb47be3c0febab43145, type: 3}
+  pauseAudio: {fileID: 8300000, guid: 2b8ad6bdf3402214fa017ebe08b27387, type: 3}
   walkAudio: {fileID: 8300000, guid: b2286290d6c49544d83213b365e4f549, type: 3}
   runAudio: {fileID: 8300000, guid: e24587af5b2e369438fcd620b2da5474, type: 3}
   playerAudio: {fileID: 2710336335442159035}
