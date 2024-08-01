@@ -7,7 +7,8 @@ public class Spawner : MonoBehaviour
     [SerializeField] private List<GameObject> enemiesToSpawnS1;
     [SerializeField] private List<GameObject> enemiesToSpawnS2;
     [SerializeField] private GameObject witch;
-    [SerializeField] private float SpawnRange = 2.0f;
+    [SerializeField] private float SpawnRangeX = 4.0f;
+    [SerializeField] private float SpawnRangeY = 2.0f;
     [SerializeField] private int spawnTimeS1 = 5;
     [SerializeField] private int spawnTimeS2 = 2;
     [SerializeField] private int totalEnemiesS1 = 30;
@@ -39,8 +40,8 @@ public class Spawner : MonoBehaviour
         for (int i = 0; i < enemiesToSpawnS1.Count; i++)
         {
             Instantiate(enemiesToSpawnS1[i], 
-                    new Vector3(transform.position.x + Random.Range(SpawnRange, SpawnRange), 
-                    transform.position.y +  Random.Range(-SpawnRange, SpawnRange), 0), 
+                    new Vector3(transform.position.x + Random.Range(-SpawnRangeX, SpawnRangeX), 
+                    transform.position.y +  Random.Range(-SpawnRangeY, SpawnRangeY), 0), 
                     Quaternion.identity);
             totalEnemiesS1--;
             if(totalEnemiesS1 == 0) { break; }
@@ -63,8 +64,8 @@ public class Spawner : MonoBehaviour
             for (int i = 0; i < enemiesToSpawnS2.Count; i++)
             {
                 Instantiate(enemiesToSpawnS2[i], 
-                        new Vector3(transform.position.x + Random.Range(SpawnRange, SpawnRange), 
-                        transform.position.y +  Random.Range(-SpawnRange, SpawnRange), 0), 
+                        new Vector3(transform.position.x + Random.Range(-SpawnRangeX, SpawnRangeX), 
+                        transform.position.y +  Random.Range(-SpawnRangeY, SpawnRangeY), 0), 
                         Quaternion.identity);
                 totalEnemiesS2--;
                 if(totalEnemiesS2 == 0) { break; }

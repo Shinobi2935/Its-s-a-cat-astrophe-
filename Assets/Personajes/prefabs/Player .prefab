@@ -586,6 +586,7 @@ MonoBehaviour:
   isInteracting: 0
   isInventoryShown: 0
   isPaused: 0
+  attackCoolDown: 35
   gamemanager: {fileID: 0}
 --- !u!50 &646659072
 Rigidbody2D:

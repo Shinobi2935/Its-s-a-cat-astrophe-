@@ -21,7 +21,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool isInteracting = false;
     [SerializeField] private bool isInventoryShown = false;
     [SerializeField] private bool isPaused = false;
+    [SerializeField] private int attackCoolDown = 300;
     [SerializeField] private GameManager gamemanager = null;
+
+    private bool canAttack = true;
+    private int currentAttack = 0;
 
     // Start is called before the first frame update
     void Awake()
@@ -33,6 +37,7 @@ public class PlayerController : MonoBehaviour
         playerStats = GetComponent<PlayerStats>();
         playerAudio = GetComponent<AudioSource>();
         gamemanager = FindObjectOfType<GameManager>();
+        currentAttack = attackCoolDown;
         if (gamemanager.IsPaused())
         {
             gamemanager.PauseUnpauseGame();
@@ -80,6 +85,12 @@ public class PlayerController : MonoBehaviour
                 isRecovering = false;
             }
         }
+        if(!canAttack && currentAttack != 0) { currentAttack--; }
+        else
+        {
+            canAttack = true;
+            currentAttack = attackCoolDown;
+        }
     }
     public bool GetIsInteracting() { return isInteracting; }
     public void SetIsInteracting(bool inter) { isInteracting = inter; }
@@ -105,13 +116,14 @@ public class PlayerController : MonoBehaviour
     private void OnFireStarted(InputAction.CallbackContext context)
     {
         moveVector = Vector2.zero;
-        if ( !gamemanager.IsPaused())
+        if ( !gamemanager.IsPaused() && canAttack)
         {
             playerAnimator.SetBool("IsMove", false);
             isRunning = false;
             playerAnimator.SetTrigger("Attack");
             playerAudio.clip = attackAudio;
             playerAudio.Play();
+            canAttack = false;
         }
     }
     private void OnInteractStarted(InputAction.CallbackContext context)

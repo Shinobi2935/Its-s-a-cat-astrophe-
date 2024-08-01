@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7162067803236937696}
   - component: {fileID: 7162067803236937711}
   - component: {fileID: -8381218060706067710}
+  - component: {fileID: 7244824092149070153}
   m_Layer: 0
   m_Name: TriggerBox_LETRERO
   m_TagString: Untagged
@@ -123,7 +124,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogBox: {fileID: 0}
   dialogText: {fileID: 0}
-  dialogo: DFSDFSD
+  dialogo:
+  - Attack with "Left Click/Right Trigger"
+  - Dash with "Left Shift/Button East"
+  - Collect items to be stronger
+  - 'You''ll need 5 of each to get stronger '
+  - Open chest to get treasures
+  - "Open your backpack with \u201CM/Button South\u201C"
+  - "Pause your adventure with \u201CEsc/Start\u201C"
   playerController: {fileID: 0}
   leido: 0
   vSprite: {fileID: 7162067803236937696}
+--- !u!95 &7244824092149070153
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7162067803236937709}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5bad025dc697a204c9bf2a2f35c674b6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

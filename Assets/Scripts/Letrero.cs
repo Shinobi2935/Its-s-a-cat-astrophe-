@@ -1,33 +1,44 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class Letrero : MonoBehaviour
 {
 	[SerializeField] private GameObject dialogBox;
-	[SerializeField] private TMP_Text dialogText;
-	[SerializeField] private string dialogo;
+	[SerializeField] private NavegadorDialogos nDialogos;
+	[SerializeField] private string[] dialogo;
 	[SerializeField] private PlayerController playerController = null;
 	[SerializeField] public bool leido = false;
 	[SerializeField] private SpriteRenderer vSprite;
-	private bool dialogActive = false;
 	private AudioSource readAudio;
+	private Animator signAnimator;
 
     private void Start()
     {
 		readAudio = this.GetComponent<AudioSource>();
+		signAnimator = this.GetComponent<Animator>();
 		vSprite.enabled = false;
+		leido = false;
     }
     void Update()
 	{
 		if(playerController != null)
 		{
-			if (dialogActive) { dialogBox.SetActive(playerController.GetIsInteracting()); 
-			if (playerController.GetIsInteracting()) { Debug.Log("Leeyo el texto"); leido = true; } }
-			if (!dialogBox.active) { readAudio.Play(); }
-			vSprite.enabled = dialogActive;
+			signAnimator.SetBool("isOpen", playerController.GetIsInteracting());
 		}
+	}
+
+	public void OpenSign()
+	{
+		dialogBox.SetActive(true);
+		Time.timeScale = 0;
+		leido = true;
+		readAudio.Play();
+	}
+	public void CloseSign()
+	{
+		dialogBox.SetActive(false);
+		Time.timeScale = 1;
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
@@ -35,9 +46,9 @@ public class Letrero : MonoBehaviour
 		if (collision.CompareTag("Player"))
 		{
 			playerController = collision.transform.parent.GetComponent<PlayerController>();
-			Debug.Log("Entro");
-			dialogText.text = dialogo;
-			dialogActive = true;
+			nDialogos.AssignDialogue(dialogo);
+			nDialogos.ResetIndex();
+			vSprite.enabled = true;
 		}
 	}
 
@@ -46,9 +57,8 @@ public class Letrero : MonoBehaviour
 		if (collision.CompareTag("Player"))
 		{
 			playerController.SetIsInteracting(false);
-			Debug.Log("Salio");
-			dialogActive = false;
 			dialogBox.SetActive(false);
+			vSprite.enabled = false;
 		}
 	}
 }
