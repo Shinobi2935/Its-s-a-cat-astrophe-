@@ -11,10 +11,13 @@ public class TreasureChest : MonoBehaviour
     private AudioSource chestAudio;
     private Animator chestAnimator;
 
+    private bool hasKey;
+
     public virtual void Start ()
 	{
         chestAnimator = GetComponent<Animator>();
         chestAudio = GetComponent<AudioSource>();
+        hasKey = false;
     }
 
     private void Update ()
@@ -41,6 +44,7 @@ public class TreasureChest : MonoBehaviour
         {
             playerController = col.transform.parent.GetComponent<PlayerController>();
             vSprite.SetActive(true);
+            //if(InventoryManager.Instance.GetItem("Key") != null) {Debug.Log("aaaaaaa");}
         }
     }
 
