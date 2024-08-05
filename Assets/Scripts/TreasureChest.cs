@@ -22,7 +22,7 @@ public class TreasureChest : MonoBehaviour
 
     private void Update ()
     {
-        if (playerController != null && playerController.GetIsInteracting())
+        if (playerController != null && playerController.GetIsInteracting() && hasKey)
         {
             chestAnimator.SetTrigger("Opening");
         }
@@ -44,7 +44,7 @@ public class TreasureChest : MonoBehaviour
         {
             playerController = col.transform.parent.GetComponent<PlayerController>();
             vSprite.SetActive(true);
-            //if(InventoryManager.Instance.GetItem("Key") != null) {Debug.Log("aaaaaaa");}
+            if(InventoryManager.Instance.GetItem("Key") != null) { hasKey = true; }
         }
     }
 

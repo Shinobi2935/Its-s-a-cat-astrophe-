@@ -14,6 +14,9 @@ public class DestructableProp : MonoBehaviour
     public void SpawnItem()
     {
         result = ran.Next(0,probabilityRange);
-        if (result > 2) Instantiate(item, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+        if (result > failureProbability)
+        {
+            Instantiate(item, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+        }
     }
 }
