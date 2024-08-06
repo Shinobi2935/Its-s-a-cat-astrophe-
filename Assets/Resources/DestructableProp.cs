@@ -6,7 +6,7 @@ public class DestructableProp : MonoBehaviour
 {
     [SerializeField] private GameObject item;
     [SerializeField] [Range(1, 10)] private int probabilityMaxRange = 5;
-    [SerializeField] [Range(0, 10)] private int probabilityMinRange = 0;
+    [SerializeField] [Range(0, 9)] private int probabilityMinRange = 0;
     [SerializeField] [Range(0, 9)] private int failureProbability = 2;
 
     private static System.Random ran = new System.Random();

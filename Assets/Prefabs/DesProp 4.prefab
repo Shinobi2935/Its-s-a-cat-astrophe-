@@ -7,10 +7,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2667616429123513311, guid: d77d14d2825336f4e9c9162e9c26fc3c,
+        type: 3}
+      propertyPath: deathAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: be4159aed980ca44b90e93aee3b2505b, type: 3}
     - target: {fileID: 7907714160750302283, guid: d77d14d2825336f4e9c9162e9c26fc3c,
         type: 3}
       propertyPath: m_Name
-      value: DestructableProp 1 1
+      value: DesProp 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907714160750302284, guid: d77d14d2825336f4e9c9162e9c26fc3c,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907714160750302284, guid: d77d14d2825336f4e9c9162e9c26fc3c,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907714160750302284, guid: d77d14d2825336f4e9c9162e9c26fc3c,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907714160750302284, guid: d77d14d2825336f4e9c9162e9c26fc3c,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7907714160750302285, guid: d77d14d2825336f4e9c9162e9c26fc3c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1407568778435548309, guid: b04f0648e9b4c0e4999e4e5ad8f7f856,
+        type: 3}
+    - target: {fileID: 7907714160750302285, guid: d77d14d2825336f4e9c9162e9c26fc3c,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7907714160750302286, guid: d77d14d2825336f4e9c9162e9c26fc3c,
         type: 3}
