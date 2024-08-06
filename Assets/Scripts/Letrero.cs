@@ -22,7 +22,7 @@ public class Letrero : MonoBehaviour
     }
     void Update()
 	{
-		if(playerController != null)
+		if(playerController != null && vSprite.isVisible)
 		{
 			signAnimator.SetBool("isOpen", playerController.GetIsInteracting());
 		}
