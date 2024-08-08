@@ -7,9 +7,9 @@ public class Letrero : MonoBehaviour
 	[SerializeField] private GameObject dialogBox;
 	[SerializeField] private NavegadorDialogos nDialogos;
 	[SerializeField] private string[] dialogo;
-	[SerializeField] private PlayerController playerController = null;
 	[SerializeField] public bool leido = false;
 	[SerializeField] private SpriteRenderer vSprite;
+	private PlayerController playerController = null;
 	private AudioSource readAudio;
 	private Animator signAnimator;
 
@@ -31,14 +31,14 @@ public class Letrero : MonoBehaviour
 	public void OpenSign()
 	{
 		dialogBox.SetActive(true);
-		Time.timeScale = 0;
+		//Time.timeScale = 0;
 		leido = true;
 		readAudio.Play();
 	}
 	public void CloseSign()
 	{
 		dialogBox.SetActive(false);
-		Time.timeScale = 1;
+		//Time.timeScale = 1;
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)

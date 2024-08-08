@@ -6,8 +6,8 @@ public class TreasureChest : MonoBehaviour
 {
     [SerializeField] private GameObject vSprite;
     [SerializeField] private GameObject[] items;
-    [SerializeField] private PlayerController playerController = null;
     [SerializeField] private float DropRange = 1.0f;
+    private PlayerController playerController = null;
     private AudioSource chestAudio;
     private Animator chestAnimator;
 
