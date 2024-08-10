@@ -17,12 +17,6 @@ public class Spawner : MonoBehaviour
     private GameObject[] enemies;
     private bool waveFinished = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        StartCoroutine(SpawnFirstStage());
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -77,5 +71,10 @@ public class Spawner : MonoBehaviour
     public bool SpawnFinished()
     {
         return ((totalEnemiesS2 == 0) && (enemies.Length == 0));
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        StartCoroutine(SpawnFirstStage());
     }
 }
