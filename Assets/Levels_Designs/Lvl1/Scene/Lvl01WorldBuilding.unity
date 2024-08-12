@@ -574,32 +574,32 @@ PrefabInstance:
     - target: {fileID: -8381218060706067710, guid: b050f7af27ee7ce43acf89458bf2b02e,
         type: 3}
       propertyPath: dialogo.Array.data[0]
-      value: " \xA1Hey, t\xFA!"
+      value: ' Hey you!'
       objectReference: {fileID: 0}
     - target: {fileID: -8381218060706067710, guid: b050f7af27ee7ce43acf89458bf2b02e,
         type: 3}
       propertyPath: dialogo.Array.data[1]
-      value: "\xBFEntrar\xE1s a la casa de la se\xF1ora?"
+      value: Are you going to enter the Lady's House?
       objectReference: {fileID: 0}
     - target: {fileID: -8381218060706067710, guid: b050f7af27ee7ce43acf89458bf2b02e,
         type: 3}
       propertyPath: dialogo.Array.data[2]
-      value: " \xA1A\xFAn eres muy d\xE9bil!"
+      value: You're too weak!
       objectReference: {fileID: 0}
     - target: {fileID: -8381218060706067710, guid: b050f7af27ee7ce43acf89458bf2b02e,
         type: 3}
       propertyPath: dialogo.Array.data[3]
-      value: "\xBFPor qu\xE9 no recoges 5 de esas piedras?"
+      value: What about taking 5 of those stones instead?
       objectReference: {fileID: 0}
     - target: {fileID: -8381218060706067710, guid: b050f7af27ee7ce43acf89458bf2b02e,
         type: 3}
       propertyPath: dialogo.Array.data[4]
-      value: "Puedo ense\xF1arte una cosa genial"
+      value: Open your menu with 'm'
       objectReference: {fileID: 0}
     - target: {fileID: -8381218060706067710, guid: b050f7af27ee7ce43acf89458bf2b02e,
         type: 3}
       propertyPath: dialogo.Array.data[5]
-      value: Aprovecha que llevas una mochila
+      value: After you collect the 5 stones
       objectReference: {fileID: 0}
     - target: {fileID: 7162067803236937709, guid: b050f7af27ee7ce43acf89458bf2b02e,
         type: 3}
