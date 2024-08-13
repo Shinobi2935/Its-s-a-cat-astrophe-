@@ -123,6 +123,11 @@ public class InventoryManager : MonoBehaviour
         return Items;
     }
 
+    public CollectableItem GetItem(string intemName)
+    {
+        return Items.Find(x => x.name == intemName);
+    }
+
     public void ErraseInventory()
     {
         Items = new List<CollectableItem>();

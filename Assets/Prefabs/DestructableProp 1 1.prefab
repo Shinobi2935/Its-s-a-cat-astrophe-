@@ -148,6 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 6155535673047671607, guid: 7835f4b219bf2614cb3289b7964fd401, type: 3}
+  probabilityRange: 5
+  failureProbability: 2
 --- !u!61 &7907714160750302284
 BoxCollider2D:
   m_ObjectHideFlags: 0

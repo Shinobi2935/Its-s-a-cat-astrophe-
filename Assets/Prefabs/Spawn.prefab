@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 23334070190754577}
   - component: {fileID: 23334070190754576}
+  - component: {fileID: 1090346835327782575}
   m_Layer: 0
   m_Name: Spawn
   m_TagString: Untagged
@@ -52,8 +53,35 @@ MonoBehaviour:
   - {fileID: 8384270971696672433, guid: a80a65013f1e6924d89b0a3cff2265d6, type: 3}
   - {fileID: 6991941753444066401, guid: 040b91334eea50442994a1794d92d496, type: 3}
   witch: {fileID: 0}
-  SpawnRange: 2
+  SpawnRangeX: 4
+  SpawnRangeY: 2
   spawnTimeS1: 5
   spawnTimeS2: 2
   totalEnemiesS1: 21
   totalEnemiesS2: 21
+--- !u!61 &1090346835327782575
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23334070190754578}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3}
+  m_EdgeRadius: 0
