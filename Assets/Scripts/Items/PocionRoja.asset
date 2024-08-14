@@ -15,5 +15,5 @@ MonoBehaviour:
   id: 1
   itemName: Pocion Roja
   value: 25
-  icon: {fileID: -728488644960612398, guid: fdb6ff3657d94304e96c1e26035625e3, type: 3}
+  icon: {fileID: -8558721662302090408, guid: 47193b367e042ab41898c369065d924a, type: 3}
   itemType: 0

@@ -15,7 +15,6 @@ public class CollectableItem : ScriptableObject
     {
         Potion,
         Stone,
-        Stick,
-        Key
+        Stick
     }
 }
