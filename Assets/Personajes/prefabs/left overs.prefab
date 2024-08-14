@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_Sprite: {fileID: -633674586879436024, guid: 8de29419445e7fb43b9069a449baf0a4,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -102,6 +102,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAudio: {fileID: 8300000, guid: dbe2e71798f2eb6409348a6008015beb, type: 3}
   deathAudio: {fileID: 8300000, guid: be4159aed980ca44b90e93aee3b2505b, type: 3}
+  m_Collider: {fileID: 8802494108255672130}
+  health: {fileID: 0}
+  canvas: {fileID: 0}
   maxHealth: 10
   currentHealth: 0
   damage:
