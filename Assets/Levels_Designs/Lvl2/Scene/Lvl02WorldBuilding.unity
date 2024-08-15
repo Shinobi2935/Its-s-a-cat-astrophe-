@@ -1394,6 +1394,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PathBlock
       objectReference: {fileID: 0}
+    - target: {fileID: 3399784641430281157, guid: 5e5c3a5d6ddf4b04681e6e9d731b56ab,
+        type: 3}
+      propertyPath: Letrero_1
+      value: 
+      objectReference: {fileID: 325792845}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e5c3a5d6ddf4b04681e6e9d731b56ab, type: 3}
 --- !u!4 &322582902 stripped
@@ -1522,6 +1527,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 325792843}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &325792845 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -8381218060706067710, guid: b050f7af27ee7ce43acf89458bf2b02e,
+    type: 3}
+  m_PrefabInstance: {fileID: 325792843}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b42ac0933540bab439c0383cc47c73a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &350079697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9609,6 +9626,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PathBlock (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3399784641430281157, guid: 5e5c3a5d6ddf4b04681e6e9d731b56ab,
+        type: 3}
+      propertyPath: Letrero_1
+      value: 
+      objectReference: {fileID: 325792845}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e5c3a5d6ddf4b04681e6e9d731b56ab, type: 3}
 --- !u!4 &1035759565 stripped
@@ -9984,6 +10006,11 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 3399784641430281157, guid: 5e5c3a5d6ddf4b04681e6e9d731b56ab,
+        type: 3}
+      propertyPath: Letrero_1
+      value: 
+      objectReference: {fileID: 325792845}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e5c3a5d6ddf4b04681e6e9d731b56ab, type: 3}
 --- !u!4 &1114818742 stripped

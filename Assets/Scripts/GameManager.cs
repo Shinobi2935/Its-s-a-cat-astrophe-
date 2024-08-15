@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
             gameHasEnded = true;
             FindObjectOfType<MenuScript>().DisplayGameOverScreen();
             PauseUnpauseGame();
-            InventoryManager.Instance.ErraseInventory();
+            InventoryManager.Instance.RemoveAll();
             Debug.Log("Game Over");
         }
     }
