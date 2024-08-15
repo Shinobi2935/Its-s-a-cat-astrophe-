@@ -5,51 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class SceneNavigation : MonoBehaviour
 {
-    [SerializeField] private GameObject vSprite;
     [SerializeField] private bool loadNextScene;
-    private PlayerController playerController = null;
-    private Animator chestAnimator;
-    private PlayerStats ps = null;
-    private bool hasKey;
+    // Start is called before the first frame update
+    //void Start()
+    //{
+        
+    //}
 
-    void Start()
-    {
-        hasKey = false;
-    }
-
-    void Update()
-    {
-        if(playerController != null && playerController.GetIsInteracting() && hasKey)
-        { 
-            GoToNextLevel();
-        }
-    }
+    // Update is called once per frame
+    //void Update()
+    //{
+        
+    //}
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Player"))
         {
-            playerController = col.transform.parent.GetComponent<PlayerController>();
-            ps = col.transform.parent.GetComponent<PlayerStats>();
-            vSprite.SetActive(true);
-            if(InventoryManager.Instance.GetItem("Key") != null) { hasKey = true; }
+            PlayerStats playerStats = col.transform.parent.GetComponent<PlayerStats>();
+            playerStats.SavePlayer();
+            playerStats.SetGameStarted(true);
+            if (loadNextScene) { SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex + 1 ); }
+            else { SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex - 1 ); }
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-	{
-		if (collision.CompareTag("Player"))
-		{
-            playerController.SetIsInteracting(false);
-            vSprite.SetActive(false);
-        }
-    }
-
-    private void GoToNextLevel()
-    {
-        ps.SavePlayer();
-        ps.SetGameStarted(true);
-        InventoryManager.Instance.Remove(InventoryManager.Instance.GetItem("Key"));
-        if (loadNextScene) { SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex + 1 ); }
-        else { SceneManager.LoadScene( SceneManager.GetActiveScene().buildIndex - 1 ); }
     }
 }

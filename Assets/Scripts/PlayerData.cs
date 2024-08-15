@@ -38,17 +38,14 @@ public class PlayerData
         maxStamina = playerStats.maxTimeSprint;
 
         DamageValue = playerStats.damage.baseValue;
-        
-        if(playerStats.damage.modifiers.Count > 0)
-            DamageModdifier = new int[playerStats.damage.modifiers.Count];
+        DamageModdifier = new int[playerStats.damage.modifiers.Count];
         for (int i = 0; i < playerStats.damage.modifiers.Count; i++)
         {
             DamageModdifier[i] = playerStats.damage.modifiers[i];
         }
 
         ArmorValue = playerStats.armor.baseValue;
-        if(playerStats.armor.modifiers.Count > 0)
-            ArmorModdifier = new int[playerStats.armor.modifiers.Count];
+        ArmorModdifier = new int[playerStats.armor.modifiers.Count];
         for (int i = 0; i < playerStats.armor.modifiers.Count; i++)
         {
             ArmorModdifier[i] = playerStats.armor.modifiers[i];

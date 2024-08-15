@@ -1331,8 +1331,7 @@ MonoBehaviour:
     west  of  retro ...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e96aeaf32ae731d47be04cc59459c33e, type: 2}
-  m_sharedMaterial: {fileID: 7705418124726978552, guid: e96aeaf32ae731d47be04cc59459c33e,
-    type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 0bc0ef13ecea95d40bb3d466ecb1e78d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

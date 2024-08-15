@@ -4,33 +4,19 @@ using UnityEngine;
 
 public class TreasureChest : MonoBehaviour
 {
-    [SerializeField] private GameObject vSprite;
     [SerializeField] private GameObject[] items;
     [SerializeField] private float DropRange = 1.0f;
-    private PlayerController playerController = null;
     private AudioSource chestAudio;
     private Animator chestAnimator;
-
-    private bool hasKey;
 
     public virtual void Start ()
 	{
         chestAnimator = GetComponent<Animator>();
         chestAudio = GetComponent<AudioSource>();
-        hasKey = false;
-    }
-
-    private void Update ()
-    {
-        if (playerController != null && playerController.GetIsInteracting() && hasKey)
-        {
-            chestAnimator.SetTrigger("Opening");
-        }
     }
 
     public void SpawnItems()
     {
-        chestAudio.Play();
         foreach (var item in items)
         {
             Instantiate(item, new Vector3(transform.position.x + Random.Range(-DropRange, DropRange), 
@@ -42,18 +28,8 @@ public class TreasureChest : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            playerController = col.transform.parent.GetComponent<PlayerController>();
-            vSprite.SetActive(true);
-            if(InventoryManager.Instance.GetItem("Key") != null) { hasKey = true; }
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-	{
-		if (collision.CompareTag("Player"))
-		{
-            playerController.SetIsInteracting(false);
-            vSprite.SetActive(false);
+            chestAnimator.SetTrigger("Opening");
+            chestAudio.Play();
         }
     }
 }
