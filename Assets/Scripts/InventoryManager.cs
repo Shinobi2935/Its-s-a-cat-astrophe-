@@ -123,6 +123,11 @@ public class InventoryManager : MonoBehaviour
         return Items;
     }
 
+    public CollectableItem GetItem(string name)
+    {
+        return Items.Find(r => r.itemName == name);
+    }
+
     public void RemoveAll()
     {
         Items = Items = new List<CollectableItem>();

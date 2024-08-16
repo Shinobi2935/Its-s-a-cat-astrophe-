@@ -10,10 +10,11 @@ public class SidekickFollow : MonoBehaviour
     public float speed;
 
     public float distance;
+    private Vector2 dir = Vector2.zero;
     Animator animator;
     Vector2 movement = Vector2.zero;
     private PlayerControls playerControls = null;
-    private Rigidbody2D playerRigidbody;
+    private Rigidbody2D sRigidbody;
     private PlayerInput playerInput;
     private bool isInteracting = false;
     private GameManager gamemanager = null;
@@ -22,7 +23,7 @@ public class SidekickFollow : MonoBehaviour
     void Awake()
     {
         animator = GetComponent<Animator>();
-        playerRigidbody = GetComponent<Rigidbody2D>();
+        sRigidbody = GetComponent<Rigidbody2D>();
         playerInput = GetComponent<PlayerInput>();
         playerControls = new PlayerControls();
         gamemanager = FindObjectOfType<GameManager>();
@@ -38,6 +39,8 @@ public class SidekickFollow : MonoBehaviour
     {
         if( !gamemanager.IsPaused())
         {
+            dir = (target.transform.position - transform.position);
+            dir.Normalize();
             if( target != null )
                     {
                         distance = Vector2.Distance(transform.position, target.transform.position); 
@@ -47,9 +50,18 @@ public class SidekickFollow : MonoBehaviour
 
                     if (distance > 1.3)
                     {
-                        transform.position = Vector2.MoveTowards(this.transform.position, target.transform.position, speed * Time.deltaTime);
-
-
+                        //transform.position = Vector2.MoveTowards(this.transform.position, target.transform.position, speed * Time.deltaTime);
+                        sRigidbody.velocity = dir * speed;
+                        animator.SetFloat("Horizontal", dir.x);
+                        animator.SetFloat("Vertical", dir.y);
+                    }
+                    else
+                    {
+                        sRigidbody.velocity = movement;
+                        if(movement == Vector2.zero)
+                        {
+                            animator.SetBool("IsMove", false);
+                        }
                     }
         }
         
@@ -62,8 +74,16 @@ public class SidekickFollow : MonoBehaviour
         if (!gamemanager.IsPaused())
         {
             animator.SetBool("IsMove", true);
-            animator.SetFloat("Horizontal", movement.x);
-            animator.SetFloat("Vertical", movement.y);
+            if (distance > 1.3)
+            {
+                animator.SetFloat("Horizontal", dir.x);
+                animator.SetFloat("Vertical", dir.y);
+            }
+            else
+            {
+                animator.SetFloat("Horizontal", movement.x);
+                animator.SetFloat("Vertical", movement.y);
+            }
         }
         
     }
@@ -72,7 +92,14 @@ public class SidekickFollow : MonoBehaviour
         movement = Vector2.zero;
         if (!gamemanager.IsPaused())
         {
-            animator.SetBool("IsMove", false);
+            if (distance > 1.3)
+            {
+                animator.SetBool("IsMove", true);
+            }
+            else
+            {
+                animator.SetBool("IsMove", false);
+            }
         }
     }
 

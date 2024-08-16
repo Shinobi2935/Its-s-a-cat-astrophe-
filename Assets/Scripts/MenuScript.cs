@@ -9,13 +9,21 @@ public class MenuScript : MonoBehaviour
     [SerializeField] private GameObject gameWin;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject inventoryMenu;
+    [SerializeField] private GameObject playerStats;
     [SerializeField] private Slider HealthBar;
     [SerializeField] private Slider Health;
     [SerializeField] private Slider StaminaBar;
     [SerializeField] private Slider Stamina;
+
+    private void Awake()
+    {
+		playerStats.SetActive(true);
+    }
+
     public void DisplayGameOverScreen()
     {
         gameOver.SetActive(true);
+        playerStats.SetActive(false);
         GameObject obj = GameObject.FindGameObjectWithTag("MainCamera");;
     }
     public void DisplayWinScreen()
