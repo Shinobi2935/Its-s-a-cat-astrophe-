@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneNavigation : MonoBehaviour
 {
     [SerializeField] private GameObject vSprite;
+    [SerializeField] private GameObject animSprite;
     [SerializeField] private bool loadNextScene;
     private PlayerController playerController = null;
     private Animator chestAnimator;
@@ -30,8 +31,13 @@ public class SceneNavigation : MonoBehaviour
         {
             playerController = col.transform.parent.GetComponent<PlayerController>();
             ps = col.transform.parent.GetComponent<PlayerStats>();
-            vSprite.SetActive(true);
-            if(InventoryManager.Instance.GetItem("Key") != null) { hasKey = true; }
+            if(InventoryManager.Instance.GetItem("Key") != null) { 
+                hasKey = true;
+                vSprite.SetActive(true);
+            }
+            else {
+                animSprite.SetActive(true);
+            }
         }
     }
 
@@ -41,6 +47,7 @@ public class SceneNavigation : MonoBehaviour
 		{
             playerController.SetIsInteracting(false);
             vSprite.SetActive(false);
+            animSprite.SetActive(false);
         }
     }
 
