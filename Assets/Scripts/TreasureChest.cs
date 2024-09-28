@@ -5,6 +5,7 @@ using UnityEngine;
 public class TreasureChest : MonoBehaviour
 {
     [SerializeField] private GameObject vSprite;
+    [SerializeField] private GameObject animSprite;
     [SerializeField] private GameObject[] items;
     [SerializeField] private float DropRange = 1.0f;
     private PlayerController playerController = null;
@@ -43,8 +44,14 @@ public class TreasureChest : MonoBehaviour
         if (col.CompareTag("Player"))
         {
             playerController = col.transform.parent.GetComponent<PlayerController>();
-            vSprite.SetActive(true);
-            if(InventoryManager.Instance.GetItem("Key") != null) { hasKey = true; }
+            
+            if(InventoryManager.Instance.GetItem("Key") != null) { 
+                hasKey = true; 
+                vSprite.SetActive(true);
+            }
+            else {
+                animSprite.SetActive(true);
+            }
         }
     }
 
@@ -54,6 +61,7 @@ public class TreasureChest : MonoBehaviour
 		{
             playerController.SetIsInteracting(false);
             vSprite.SetActive(false);
+            animSprite.SetActive(false);
         }
     }
 }
