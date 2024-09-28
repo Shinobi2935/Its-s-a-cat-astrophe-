@@ -167,7 +167,7 @@ public class PlayerController : MonoBehaviour
     {
         playerControls.Player.Disable();
     }
-    public void OnPause(InputAction.CallbackContext context)
+    private void OnPause(InputAction.CallbackContext context)
     {
         isPaused = true;
         FindObjectOfType<MenuScript>().PauseGame();
