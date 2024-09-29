@@ -54,7 +54,8 @@ public class CharacterStats : MonoBehaviour
 		damage = Mathf.Clamp(damage, 0, int.MaxValue);
 
 		// Subtract damage from health
-		currentHealth -= damage;
+        if( damage == 0 ) { currentHealth -= 1; }
+        else { currentHealth -= damage; }
         Debug.Log("health per: " + currentHealth);
         if(health != null) health.value = (float)currentHealth/maxHealth;
         characterAudio.clip = damageAudio;
