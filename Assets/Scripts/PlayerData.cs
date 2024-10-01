@@ -39,19 +39,17 @@ public class PlayerData
 
         DamageValue = playerStats.damage.baseValue;
         
-        if(playerStats.damage.modifiers.Count > 0)
+        if(playerStats.damage.modifiers != null) {
             DamageModdifier = new int[playerStats.damage.modifiers.Count];
-        for (int i = 0; i < playerStats.damage.modifiers.Count; i++)
-        {
-            DamageModdifier[i] = playerStats.damage.modifiers[i];
+            for (int i = 0; i < playerStats.damage.modifiers.Count; i++)
+                DamageModdifier[i] = playerStats.damage.modifiers[i];
         }
 
         ArmorValue = playerStats.armor.baseValue;
-        if(playerStats.armor.modifiers.Count > 0)
+        if(playerStats.armor.modifiers != null) {
             ArmorModdifier = new int[playerStats.armor.modifiers.Count];
-        for (int i = 0; i < playerStats.armor.modifiers.Count; i++)
-        {
-            ArmorModdifier[i] = playerStats.armor.modifiers[i];
+            for (int i = 0; i < playerStats.armor.modifiers.Count; i++)
+                ArmorModdifier[i] = playerStats.armor.modifiers[i];
         }
     }
 }

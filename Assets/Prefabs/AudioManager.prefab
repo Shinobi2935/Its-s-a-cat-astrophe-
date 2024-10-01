@@ -62,12 +62,6 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  - name: WinMusic
-    clip: {fileID: 8300000, guid: cd53d786e4fa8e941bbff6ae486b5595, type: 3}
-    volume: 0.3
-    pitch: 1.58
-    loop: 1
-    source: {fileID: 0}
   - name: EscenaDePruebas
     clip: {fileID: 8300000, guid: 132cdd33e8142634985830e43d19b49a, type: 3}
     volume: 0.2
@@ -93,13 +87,13 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: Final
-    clip: {fileID: 8300000, guid: cd53d786e4fa8e941bbff6ae486b5595, type: 3}
+    clip: {fileID: 8300000, guid: 5dcedc14cfad5b74080d641eaaf42775, type: 3}
     volume: 0.3
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Intro
-    clip: {fileID: 8300000, guid: cd53d786e4fa8e941bbff6ae486b5595, type: 3}
+    clip: {fileID: 8300000, guid: 5dcedc14cfad5b74080d641eaaf42775, type: 3}
     volume: 0.3
     pitch: 1
     loop: 1

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 4
   itemName: Stick
-  value: 15
+  value: 150
   icon: {fileID: -7907951331658488048, guid: 7a0b011bfbf83c744bfe554b4f9aa0e9, type: 3}
   itemType: 2

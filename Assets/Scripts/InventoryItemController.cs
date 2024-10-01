@@ -50,13 +50,13 @@ public class InventoryItemController : MonoBehaviour
                 //PlayerTesting.Instance.IncreaseExp(item.value);
                 //CharacterStats.Instance.DamageUpgrade(item.value);
                 //FindObjectOfType<PlayerStats>().DamageUpgrade(item.value);
-                if (FindObjectOfType<PlayerStats>().UpgradeStat(15, 5, CollectableItem.ItemType.Stone, Stat.StatsType.Armor)) { RemoveItem(); }
+                if (FindObjectOfType<PlayerStats>().UpgradeStat(150, 5, CollectableItem.ItemType.Stone, Stat.StatsType.Armor)) { RemoveItem(); }
                 break;
             case CollectableItem.ItemType.Stick:
                 //PlayerTesting.Instance.IncreaseExp(item.value);
                 //CharacterStats.Instance.DamageUpgrade(item.value);
                 //FindObjectOfType<PlayerStats>().DamageUpgrade(item.value);
-                if (FindObjectOfType<PlayerStats>().UpgradeStat(15, 5, CollectableItem.ItemType.Stick, Stat.StatsType.Damage)) { RemoveItem(); }
+                if (FindObjectOfType<PlayerStats>().UpgradeStat(150, 5, CollectableItem.ItemType.Stick, Stat.StatsType.Damage)) { RemoveItem(); }
                 break;
         }
     }

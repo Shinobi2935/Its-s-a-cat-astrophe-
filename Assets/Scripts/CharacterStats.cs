@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,7 +13,7 @@ public class CharacterStats : MonoBehaviour
     [SerializeField] private Collider2D m_Collider;
     [SerializeField] private Slider health;
     [SerializeField] private GameObject canvas;
-	public int maxHealth = 100;
+	public int maxHealth = 1000;
     public int currentHealth;
 
     public Stat damage;

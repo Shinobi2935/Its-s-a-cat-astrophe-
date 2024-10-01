@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   itemName: Stone
-  value: 15
+  value: 150
   icon: {fileID: 3452003437791708593, guid: edeb5956d15d28547a9b06600f953147, type: 3}
   itemType: 1
