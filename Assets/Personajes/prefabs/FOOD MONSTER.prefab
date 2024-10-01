@@ -134,10 +134,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAudio: {fileID: 8300000, guid: dbe2e71798f2eb6409348a6008015beb, type: 3}
   deathAudio: {fileID: 8300000, guid: be4159aed980ca44b90e93aee3b2505b, type: 3}
-  maxHealth: 10
+  m_Collider: {fileID: 0}
+  health: {fileID: 0}
+  canvas: {fileID: 0}
+  maxHealth: 100
   currentHealth: 0
   damage:
-    baseValue: 40
+    baseValue: 400
     modifiers: 
   armor:
     baseValue: 0

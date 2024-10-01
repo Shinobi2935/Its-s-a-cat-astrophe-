@@ -145,7 +145,7 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 0
   damage:
-    baseValue: 10
+    baseValue: 100
     modifiers: 
   armor:
     baseValue: 0

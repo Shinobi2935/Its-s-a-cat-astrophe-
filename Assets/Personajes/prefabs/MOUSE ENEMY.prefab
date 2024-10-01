@@ -291,10 +291,10 @@ MonoBehaviour:
   m_Collider: {fileID: 8356892157837487586}
   health: {fileID: 6360136861191537255}
   canvas: {fileID: 212888284962278118}
-  maxHealth: 15
+  maxHealth: 150
   currentHealth: 0
   damage:
-    baseValue: 40
+    baseValue: 400
     modifiers: 
   armor:
     baseValue: 0

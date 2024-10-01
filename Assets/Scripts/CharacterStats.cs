@@ -12,7 +12,7 @@ public class CharacterStats : MonoBehaviour
     [SerializeField] private Collider2D m_Collider;
     [SerializeField] private Slider health;
     [SerializeField] private GameObject canvas;
-	public int maxHealth = 100;
+	public int maxHealth = 1000;
     public int currentHealth;
 
     public Stat damage;
@@ -54,7 +54,8 @@ public class CharacterStats : MonoBehaviour
 		damage = Mathf.Clamp(damage, 0, int.MaxValue);
 
 		// Subtract damage from health
-		currentHealth -= damage;
+        if( damage == 0 ) { currentHealth -= 1; }
+        else { currentHealth -= damage; }
         Debug.Log("health per: " + currentHealth);
         if(health != null) health.value = (float)currentHealth/maxHealth;
         characterAudio.clip = damageAudio;
