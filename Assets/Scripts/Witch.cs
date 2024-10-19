@@ -28,7 +28,7 @@ public class Witch : Enemy
     {
         while (true)
         {
-            if (player != null && !GameManager.gameIsPaused)
+            if (target != null && !GameManager.gameIsPaused)
             {
                 var projectileShoot = Instantiate(projectiles, spawnPoint.position, Quaternion.identity);
                 Vector3 direction = target.position - spawnPoint.position;
