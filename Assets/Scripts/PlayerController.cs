@@ -38,10 +38,13 @@ public class PlayerController : MonoBehaviour
         playerAudio = GetComponent<AudioSource>();
         gamemanager = FindObjectOfType<GameManager>();
         currentAttack = attackCoolDown;
+
+        // Verifica si el juego está en pausa al iniciar
         if (gamemanager.IsPaused())
         {
             gamemanager.PauseUnpauseGame();
         }
+
         isPaused = false;
         playerControls = new PlayerControls();
         playerControls.Player.Move.performed += OnMovePerformed;
@@ -57,7 +60,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         if (GameManager.gameIsPaused) return;
-        
+
         if(isRunning && playerStats.currentTimeSprint > 0.0f && (!isRecovering))
         {
             playerRigidbody.velocity = moveVector *  playerStats.maxSprint;
@@ -80,6 +83,7 @@ public class PlayerController : MonoBehaviour
                 isRecovering = false;
             }
         }
+        
         if(!canAttack && currentAttack != 0) { currentAttack--; }
         else
         {
@@ -87,13 +91,14 @@ public class PlayerController : MonoBehaviour
             currentAttack = attackCoolDown;
         }
     }
+
     public bool GetIsInteracting() { return isInteracting; }
     public void SetIsInteracting(bool inter) { isInteracting = inter; }
-    //public bool GetIsInventoryShown() { return isInventoryShown; }
+
     private void OnMovePerformed(InputAction.CallbackContext context)
     {
         moveVector = context.ReadValue<Vector2>();
-        if ( !gamemanager.IsPaused())
+        if (!gamemanager.IsPaused())
         {
             playerAnimator.SetBool("IsMove", true);
             playerAnimator.SetFloat("Horizontal", moveVector.x);
@@ -102,6 +107,7 @@ public class PlayerController : MonoBehaviour
             playerAudio.Play();
         }
     }
+
     private void OnRunPerformed(InputAction.CallbackContext context)
     {
         if (!isRunning && !isRecovering)
@@ -111,10 +117,11 @@ public class PlayerController : MonoBehaviour
             playerAudio.Play();
         }
     }
+
     private void OnFireStarted(InputAction.CallbackContext context)
     {
         moveVector = Vector2.zero;
-        if ( !gamemanager.IsPaused() && canAttack)
+        if (!gamemanager.IsPaused() && canAttack)
         {
             playerAnimator.SetBool("IsMove", false);
             isRunning = false;
@@ -124,52 +131,61 @@ public class PlayerController : MonoBehaviour
             canAttack = false;
         }
     }
+
     private void OnInteractStarted(InputAction.CallbackContext context)
     {
-        isInteracting = (isInteracting)? false : true;
+        isInteracting = !isInteracting;
     }
+
     private void OnInventoryShowPerformed(InputAction.CallbackContext context)
     {
-        //isInventoryShown = (isInventoryShown) ? false : true;
-
         FindObjectOfType<MenuScript>().ShowInventory();
-        if (!isInventoryShown)
-        {
-            isInventoryShown = true;
-        }
-        else
-        {
-            isInventoryShown = false;
-        }
+        isInventoryShown = !isInventoryShown;
     }
+
     private void OnMoveCanceled(InputAction.CallbackContext context)
     {
         moveVector = Vector2.zero;
-        if ( !gamemanager.IsPaused())
+        if (!gamemanager.IsPaused())
         {
             playerAnimator.SetBool("IsMove", false);
         }
     }
+
     private void OnRunCanceled(InputAction.CallbackContext context)
     {
         isRunning = false;
     }
+
     private void OnEnable()
     {
         playerControls.Player.Enable();
     }
+
     private void OnDisable()
     {
         playerControls.Player.Disable();
     }
+
     public void OnPause(InputAction.CallbackContext context)
     {
+        if (this == null) return;
+
         isPaused = true;
         FindObjectOfType<MenuScript>().PauseGame();
-        playerAudio.clip = pauseAudio;
-        playerAudio.Play();
-        Debug.Log("paused");
-        //FindObjectOfType<MenuScript>().DisplayWinScreen();
+
+        if (playerAudio != null)
+        {
+            playerAudio.clip = pauseAudio;
+            playerAudio.Play();
+        }
     }
 
+    private void OnDestroy()
+    {
+        if (playerControls != null)
+        {
+            playerControls.Player.Disable();
+        }
+    }
 }

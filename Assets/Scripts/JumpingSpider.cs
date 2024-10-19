@@ -38,6 +38,7 @@ public class JumpingSpider : Enemy
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.gameIsPaused) return;
         if(player != null)
         {
             distance = Vector2.Distance(transform.position, player.position);
@@ -53,8 +54,7 @@ public class JumpingSpider : Enemy
         isFollowingPlayer = true;
         currentPoint = player;
         direction = currentPoint.position - transform.position;
-        // Multiplica la fuerza por Time.deltaTime para tener en cuenta el paso del tiempo
-        enemyRigidbody.AddRelativeForce(direction.normalized * moveSpeed * Time.deltaTime, ForceMode2D.Force);
+        enemyRigidbody.AddRelativeForce(direction.normalized * moveSpeed, ForceMode2D.Force);
     }
 
     IEnumerator IdleState()
@@ -78,8 +78,7 @@ public class JumpingSpider : Enemy
 
         if(distance > 0.5f)
         {
-            // Multiplica la fuerza por Time.deltaTime para suavizar el movimiento
-            enemyRigidbody.AddRelativeForce(direction.normalized * moveSpeed * Time.deltaTime, ForceMode2D.Force);
+            enemyRigidbody.AddRelativeForce(direction.normalized * moveSpeed, ForceMode2D.Force);
         }
         else
         {
