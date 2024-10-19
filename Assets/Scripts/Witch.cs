@@ -10,7 +10,8 @@ public class Witch : Enemy
     [SerializeField] private int intervale = 3;
     [SerializeField] private int bulletSpeed = 3;
 
-    // Start is called before the first frame update
+     private bool isShooting = false;
+     
     public void Start()
     {
         base.Start();
@@ -19,17 +20,27 @@ public class Witch : Enemy
 
     void OnEnable()
     {
-        //This will be called when object is enabled.
         Debug.Log("OnEnabled()", gameObject);
         StartCoroutine(Shoot());
     }
 
     IEnumerator Shoot()
     {
-        var projectileShoot = Instantiate(projectiles, spawnPoint.position, Quaternion.identity);
-        Vector3 direction = target.position - spawnPoint.position;
-        projectileShoot.GetComponent<Rigidbody2D>().AddRelativeForce(direction.normalized * bulletSpeed, ForceMode2D.Force);
-        yield return new WaitForSeconds(intervale);
-        StartCoroutine(Shoot());
+        while (true)
+        {
+            if (!GameManager.gameIsPaused)
+            {
+                var projectileShoot = Instantiate(projectiles, spawnPoint.position, Quaternion.identity);
+                Vector3 direction = target.position - spawnPoint.position;
+                projectileShoot.GetComponent<Rigidbody2D>().AddRelativeForce(direction.normalized * bulletSpeed, ForceMode2D.Force);
+
+                isShooting = true;
+
+                yield return new WaitForSeconds(intervale);
+            }
+            else { yield return null; }
+        }
     }
+
+    void OnDisable() { StopCoroutine(Shoot()); }
 }

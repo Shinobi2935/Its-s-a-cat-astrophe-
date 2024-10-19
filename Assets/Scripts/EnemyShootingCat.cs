@@ -80,6 +80,7 @@ public class EnemyShootingCat : Enemy
 
     private void Shoot()
     {
+        if (GameManager.gameIsPaused) return;
         //Debug.Log(timeToFire);
         if(timeToFire <= 0f)
         {

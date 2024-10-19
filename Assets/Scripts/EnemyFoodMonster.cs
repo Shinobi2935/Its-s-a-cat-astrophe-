@@ -39,9 +39,9 @@ public class EnemyFoodMonster : Enemy
     {
         isFollowingPlayer = true;
         direction = player.position - transform.position;
-        enemyRigidbody.AddRelativeForce(direction.normalized * moveSpeed, ForceMode2D.Force);
+        // Multiplica la fuerza por Time.deltaTime para tener en cuenta el paso del tiempo
+        enemyRigidbody.AddRelativeForce(direction.normalized * moveSpeed * Time.deltaTime, ForceMode2D.Force);
         enemyAnimator.SetBool("IsMove", true);
-        //transform.position = Vector2.MoveTowards(this.transform.position, currentPoint.position, moveSpeed * Time.deltaTime);
     }
 
     public override void OnTriggerEnter2D(Collider2D col)

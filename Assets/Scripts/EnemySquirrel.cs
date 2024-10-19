@@ -50,8 +50,9 @@ public class EnemySquirrel : Enemy
         isFollowingPlayer = true;
         currentPoint = player;
         direction = currentPoint.position - transform.position;
-        enemyRigidbody.AddRelativeForce(direction.normalized * moveSpeed, ForceMode2D.Force);
-        //transform.position = Vector2.MoveTowards(this.transform.position, currentPoint.position, moveSpeed * Time.deltaTime);
+
+        // Multiplica la fuerza por Time.deltaTime para tener en cuenta el paso del tiempo
+        enemyRigidbody.AddRelativeForce(direction.normalized * moveSpeed * Time.deltaTime, ForceMode2D.Force);
     }
 
     IEnumerator IdleState()
@@ -75,8 +76,8 @@ public class EnemySquirrel : Enemy
 
         if(distance > 0.5f)
         {
-            enemyRigidbody.AddRelativeForce(direction.normalized * moveSpeed, ForceMode2D.Force);
-            //transform.position = Vector2.MoveTowards(this.transform.position, currentPoint.position, moveSpeed * Time.deltaTime);
+            // Multiplica la fuerza por Time.deltaTime para suavizar el movimiento
+            enemyRigidbody.AddRelativeForce(direction.normalized * moveSpeed * Time.deltaTime, ForceMode2D.Force);
         }
         else
         {

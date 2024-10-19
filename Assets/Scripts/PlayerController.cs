@@ -54,15 +54,10 @@ public class PlayerController : MonoBehaviour
         playerControls.Player.Pause.started += OnPause;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //Debug.Log(isPaused);
-        //Debug.Log(playerAnimator);
-    }
-    // FixedUpdate is called per clock cicle
     void FixedUpdate()
     {
+        if (GameManager.gameIsPaused) return;
+        
         if(isRunning && playerStats.currentTimeSprint > 0.0f && (!isRecovering))
         {
             playerRigidbody.velocity = moveVector *  playerStats.maxSprint;
