@@ -32,6 +32,8 @@ public class EnemyCatMelee : Enemy
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.gameIsPaused) return;
+
         if(player != null)
         {
             distance = Vector2.Distance(transform.position, player.position);
@@ -53,7 +55,6 @@ public class EnemyCatMelee : Enemy
         {
             enemyAnimator.SetBool("IsMove", true);
             enemyRigidbody.AddRelativeForce(direction.normalized * moveSpeed, ForceMode2D.Force);
-            //transform.position = Vector2.MoveTowards(this.transform.position, currentPoint.position, moveSpeed * Time.deltaTime);
         }
 
     }
@@ -84,7 +85,6 @@ public class EnemyCatMelee : Enemy
         if(distance > 0.5f)
         {
             enemyRigidbody.AddRelativeForce(direction.normalized * moveSpeed, ForceMode2D.Force);
-            //transform.position = Vector2.MoveTowards(this.transform.position, currentPoint.position, moveSpeed * Time.deltaTime);
         }
         else
         {

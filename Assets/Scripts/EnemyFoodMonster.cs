@@ -29,6 +29,7 @@ public class EnemyFoodMonster : Enemy
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.gameIsPaused) return;
         if(!isFollowingPlayer) { distance = Vector2.Distance(transform.position, player.position); }
         if(distance < detectPlayerDistance) { FollowPlayer(); }
         enemyAnimator.SetFloat("Horizontal", direction.x);
@@ -41,7 +42,6 @@ public class EnemyFoodMonster : Enemy
         direction = player.position - transform.position;
         enemyRigidbody.AddRelativeForce(direction.normalized * moveSpeed, ForceMode2D.Force);
         enemyAnimator.SetBool("IsMove", true);
-        //transform.position = Vector2.MoveTowards(this.transform.position, currentPoint.position, moveSpeed * Time.deltaTime);
     }
 
     public override void OnTriggerEnter2D(Collider2D col)

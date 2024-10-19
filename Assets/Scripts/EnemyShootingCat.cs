@@ -45,7 +45,7 @@ public class EnemyShootingCat : Enemy
     // Update is called once per frame
     void Update()
     {
-        if(Vector2.Distance(player.position, transform.position) <= distanceToFollow) {
+        if(player != null && Vector2.Distance(player.position, transform.position) <= distanceToFollow) {
             RotateTowardsPlayer();
             if (player != null && Vector2.Distance(player.position, transform.position) <= distanceToShoot)
             {
@@ -80,6 +80,7 @@ public class EnemyShootingCat : Enemy
 
     private void Shoot()
     {
+        if (GameManager.gameIsPaused) return;
         //Debug.Log(timeToFire);
         if(timeToFire <= 0f)
         {

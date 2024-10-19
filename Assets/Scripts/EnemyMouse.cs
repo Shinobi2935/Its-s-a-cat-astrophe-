@@ -30,6 +30,7 @@ public class EnemyMouse : Enemy
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.gameIsPaused) return;
         Patrol();
         enemyAnimator.SetFloat("Horizontal", direction.x);
         enemyAnimator.SetFloat("Vertical", direction.y);
@@ -42,8 +43,8 @@ public class EnemyMouse : Enemy
 
         if(distance > 0.5f)
         {
+            // Multiplica la fuerza por Time.deltaTime para suavizar el movimiento
             enemyRigidbody.AddRelativeForce(direction.normalized * moveSpeed, ForceMode2D.Force);
-            //transform.position = Vector2.MoveTowards(this.transform.position, currentPoint.position, moveSpeed * Time.deltaTime);
         }
         else
         {
