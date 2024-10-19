@@ -1,8 +1,9 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using System.Diagnostics;
 
 public class CharacterStats : MonoBehaviour
 {
@@ -45,38 +46,37 @@ public class CharacterStats : MonoBehaviour
     //}
 
     // Damage the character
-    public virtual void TakeDamage (int damage)
-	{
-        if(canvas != null) canvas.SetActive(true);
-		// Subtract the armor value - Make sure damage doesn't go below 0.
+    public virtual void TakeDamage(int damage)
+    {
+        if (canvas != null) canvas.SetActive(true);
+        // Subtract the armor value - Make sure damage doesn't go below 0.
 
-		damage -= armor.GetValue();
-		damage = Mathf.Clamp(damage, 0, int.MaxValue);
+        damage -= armor.GetValue();
+        damage = Mathf.Clamp(damage, 0, int.MaxValue);
 
-		// Subtract damage from health
-        if( damage == 0 ) { currentHealth -= 1; }
+        // Subtract damage from health
+        if (damage == 0) { currentHealth -= 1; }
         else { currentHealth -= damage; }
-        Debug.Log("health per: " + currentHealth);
-        if(health != null) health.value = (float)currentHealth/maxHealth;
+        if (health != null) health.value = (float)currentHealth / maxHealth;
         characterAudio.clip = damageAudio;
         characterAudio.Play();
-        
-		// If we hit 0. Die.
 
-		if (currentHealth <= 0)
+        // If we hit 0. Die.
+
+        if (currentHealth <= 0)
         {
-            if(m_Collider != null) m_Collider.enabled = false;
+            if (m_Collider != null) m_Collider.enabled = false;
             StartCoroutine(Die());
         }
-	}
+    }
 
-	// Heal the character.
-	public void Heal (int amount)
+    // Heal the character.
+    public void Heal (int amount)
 	{
 		currentHealth += amount;
-        Debug.Log(transform.name + " cures " + amount + " damage.");
+        //Debug.Log(transform.name + " cures " + amount + " damage.");
         currentHealth = (currentHealth >= maxHealth) ? maxHealth : currentHealth;
-        Debug.Log(transform.name + " current health: " + currentHealth + ".");
+        //Debug.Log(transform.name + " current health: " + currentHealth + ".");
     }
     public void StatUpgrade(int upgrade, Stat.StatsType stat)
     {
@@ -107,13 +107,13 @@ public class CharacterStats : MonoBehaviour
             }
             id++;
         }
-        Debug.Log(inventoryItems);
+        //Debug.Log(inventoryItems);
         if (objsRequired <= indexNum.Count)
         {
-            Debug.Log("objsRequired " + objsRequired + " lest that totalitems " + indexNum.Count);
+            //Debug.Log("objsRequired " + objsRequired + " lest that totalitems " + indexNum.Count);
             foreach (CollectableItem item in indexNum)
             {
-                Debug.Log("Element " + item + " Item");
+                //Debug.Log("Element " + item + " Item");
             }
             int totalItemCount = inventoryItems.Count;
             int itemsPased = 0;
@@ -134,7 +134,7 @@ public class CharacterStats : MonoBehaviour
             isStatUpgraded = true;
         } else
         {
-            Debug.Log(indexNum.Count + " No son suficientes");
+            //Debug.Log(indexNum.Count + " No son suficientes");
         }
         indexNum.Clear();
         return isStatUpgraded;
@@ -147,7 +147,7 @@ public class CharacterStats : MonoBehaviour
 
     public virtual IEnumerator Die()
     {
-        Debug.Log(transform.name + " died.");
+        //Debug.Log(transform.name + " died.");
         enemyAnimator.SetTrigger("muerte");
         characterAudio.clip = deathAudio;
         characterAudio.Play();
